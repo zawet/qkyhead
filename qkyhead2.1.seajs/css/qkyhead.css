@@ -47,11 +47,12 @@ a[href],a{text-decoration: inherit;}
 .qkyhead .nodata div{ font-size:16px; padding:10px;display:block;}
 
 /**********主体**********/
-.qkyhead{ height:50px;}
+.qkyhead{ height:50px; position:fixed; top:0; left:0; z-index:999; width:100%;}
 .qkyhead_mian{ width:100%; position:relative;}
 
 /*左边三样*/
 .qkyhead_menuicon{ line-height:50px; width:60px; height:49px; text-align:center; cursor:pointer;}
+.qkyhead_menuicon.active{ border-bottom:none !important;}
 .qkyhead_logo{ padding:0 15px 0 25px; height:50px; }
 .qkyhead_logo img{ width:50px; height:25px; margin-top:10px; display:block;box-sizing: border-box;}
 .qkyhead_line {width: 1px;height: 34px;float: left;margin:8px 15px 0 0;}
@@ -184,7 +185,7 @@ a[href],a{text-decoration: inherit;}
 /**左三样*/
 .qkyhead_menuicon{ color:#a5a5a5;}
 .qkyhead_menuicon:hover{ background:#f5f5f5;color:#a5a5a5;}
-.qkyhead_menuicon.active{ background:#fff;color:#a5a5a5; border-right:1px solid #d8d8d8;height:50px;}
+.qkyhead_menuicon.active{ background:#fff;color:#a5a5a5; border:1px solid #d8d8d8;height:50px;}
 .qkyhead_line{background-image: linear-gradient(-180deg, #ffffff 0%, #d7dce6 51%, #ffffff 100%);}
 .qkyhead_pjname{ color:#27b0f2;}
 

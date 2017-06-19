@@ -15,9 +15,9 @@ define({
 	    htmlsrc:"js/qkyhead2.1.html",//头部模板获取异步地址
 		logosrc:"images/nav_logo/qky-logo.png",//logo来源路径
 		pjname:"全课云头部高保真2.1版本",//应用名
+		csssrc:"css/qkyhead.css",
 		theme:"white_blue",//主题 目前有白蓝（white_blue）,黑蓝（black_blue）
-		themesrc:"css/theme/",//主题路径
-		distclass:["navbar", "navbar-fixed-top", "headernav"],//默认一定要用的class
+		themesrc:"css/theme/",//主题路径(引用的插件的文件地址为起始地址
 		navli_j:[
 			{name:"导航1",attrcont:"href='#'",isactive:true},
 			{name:"导航2",attrcont:"href='#'",isactive:false},

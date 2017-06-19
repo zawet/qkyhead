@@ -11,7 +11,7 @@
 
 
 /*********零，先手执行**************/	
-loadExtentFile("css/qkyhead.css","css",false);
+
 
 
 /*********一，数据初始化**************/		
@@ -19,9 +19,9 @@ loadExtentFile("css/qkyhead.css","css",false);
 	    htmlsrc:"js/qkyhead2.1.html",//头部模板获取异步地址
 		logosrc:"images/nav_logo/qky-logo.png",//logo来源路径
 		pjname:"全课云头部高保真2.1版本",//应用名
+		csssrc:"css/qkyhead.css",
 		theme:"white_blue",//主题 目前有白蓝（white_blue）,黑蓝（black_blue）
 		themesrc:"css/theme/",//主题路径(引用的插件的文件地址为起始地址)
-		distclass:["navbar", "navbar-fixed-top", "headernav"],//默认一定要用的class
 		navli_j:[
 			{name:"导航1",attrcont:"href='#'",isactive:true},
 			{name:"导航2",attrcont:"href='#'",isactive:false},
@@ -165,7 +165,7 @@ loadExtentFile("css/qkyhead.css","css",false);
             if (!isValid(options))
                 return this;
             opts = $.extend({}, opts, options); //使用jQuery.extend 覆盖插件默认参数
-			
+			loadExtentFile(opts.csssrc,"css",false);
 			loadExtentFile(opts.themesrc+opts.theme+".css","css",true);
 			
             return this.each(function (i) {
@@ -365,7 +365,9 @@ loadExtentFile("css/qkyhead.css","css",false);
 			
 		}
 	});
-qkyhead_changetheme=function(theme){
+	
+	//独立改主题函数
+qkyhead_changetheme=function(theme,logo){
 			var thishref=$("#theme").attr("href");
 			var hrefs=thishref.split("/");
 			hrefs[hrefs.length-1]=theme+".css";
@@ -376,6 +378,8 @@ qkyhead_changetheme=function(theme){
 				else newshref+=hrefs[i]
 			}
 			$("#theme").attr("href",newshref);
+			if(logo!=null&&logo!="undefined")
+			$(".qkyhead_logo img").attr("src",logo);
 	    }
 
 /*********三，函数结合体**************/

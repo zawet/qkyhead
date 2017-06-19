@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全课云头部独立插件演示</title>
+<style>
+body{ padding:0; margin:0; background:#fff !important;}
+h3{ margin:0; padding:0; padding-bottom:15px;}
+h4{ margin:0; padding:0; padding-bottom:10px;}
+.tabless{ border:0;background-color: transparent;border-spacing: 0;border-collapse: collapse; width:100%; margin-top:-1px;}
+.tabless>thead>tr>th{ padding:5px 15px; text-align: left; border:1px solid #d8d8d8; background:#f5f5f5; color:#535353;line-height: 1.42857143; font-size:14px; font-weight:normal;}
+.tabless>tbody>tr>td{ border:1px solid #d8d8d8; padding:5px 15px;}
+.exp{ line-height:26px; color:#535353; margin-bottom:5px;}
+code{ color:#1EB1E7; padding:0 6px; background:#eee; border-radius:4px;  line-height:26px; margin:0 4px; display:inline-block}
+code.js{ color:#E88B24;}
+code.css{ color: #EB3E7E}
+.fl{ float:left !important;}
+.fr{ float:right !important;}
+.clear:before,.clear:after{ content: " "; display: table;}
+.clear:after {clear: both;}
+
+.title{ text-align:center; padding:30px 0; width:100%; background:#f5f5f5; color:#333; font-size:24px;box-shadow:0px 1px 2px  #e1e1e1;}
+.cadr{ max-width:1080px; margin:20px auto; padding:20px; border:1px solid #eee; border-radius:8px; box-shadow:1px 1px 3px #e1e1e1;}
+
+.demo_box{ width:100%; padding:15px; background:#f9f9f9; box-sizing:border-box; border-radius:6px; margin-bottom:15px;}
+.demo_title{ font-size:16px; color:#535353; line-height:26px; margin-bottom:10px; padding-left:5px;}
+.demo_box .qkyhead{ position:relative !important;}
+.demo_js{padding-left:5px;}
+.demo_js code{ margin:10px 0 0;}
+h3 span{ line-height:30px;}
+.theme_select{ height:30px; border:1px solid #d8d8d8; line-height:30px; outline:none; border-radius:4px;}
+
+</style>
+</head>
+<body>
+    <div class="title">全课云头部插件独立版本2.1演示和使用手册</div>
+    <div class="cadr">
+    	<h3 class="clear">
+        <span class="fl">实例演示</span>
+        <select class="theme_select fr">
+        <option value="white_blue">白蓝主题（white_blue）</option>
+        <option value="black_blue">黑蓝主题（black_blue）</option>
+
+        </select>
+        </h3>
+        <h4>基础演示</h4>
+        <div class="demo_box">
+        <div class="demo_title">1,默认显示年月日</div>
+        <div id="qkyhead"></div>
+        <div class="demo_js">html盒子：<code class="html">&lt;div id="qkyhead"&gt;&lt;/div&gt;</code></div>
+        <div class="demo_js">js调用：<code class="js">$("#qkyhead").qkyhead();</code></div>
+        </div>
+        
+        
+        
+		<h4>皮肤更换</h4>
+        调用以下函数，就能更换当前页面的头部插件皮肤
+        <code class="js">qkyhead_changetheme("皮肤名字","新logo地址");</code>第二个参数是给换了主题后，背景色跟logo是否搭，如果不搭，可以新链接一个新的logo<br/>
+        也可以在初始化的时候直接选择指定主题<code class="js">$("#qkyhead").qkyhead({theme:"皮肤名字"});</code><br/>
+        主题包可以复制一份新的，改变里面的颜色值，就可以创立一个新的主题包了，目前两个主题包都在<code class="css">css/theme/</code>，关涉到的头部插件的颜色，都在主题包里，要怎么改怎么改
+        
+    </div>
+    
+    <div class="cadr">
+        <h3 >使用说明</h3>
+        <div class="exp">1.引用jq,是一定要的依赖，然后引用<code class="js">&lt;script src="qkyhead2.1/js/qkyhead2.1.js"&gt;&lt;/script&gt;</code></div>
+        <div class="exp">2.创建唯一性盒子<code class="html">&lt;div id="qkyhead"&gt;&lt;/div&gt;</code></div>
+        <div class="exp">3.执行函数<code class="js">$("#qkyhead").qkyhead();</code>并传入指定参数，参数如下表；</div>
+    
+        <h4>头部插件参数表</h4>
+       <table class="tabless">
+                        <tbody>
+                        <thead><tr><th colspan="6">基础部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>htmlsrc</td><td>头部模板获取异步地址</td><td>"js/qkyhead2.1.html"</td><td>String</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>logosrc</td><td>头部logo来源路径</td><td>"images/nav_logo/qky-logo.png"</td><td>String</td><td>否</td><td>1.2+</td></tr>
+                        <tr><td>pjname</td><td>应用名</td><td>"初始页面2.0版本"</td><td>String</td><td>否</td><td>1.0+</td></tr>
+                        <tr><td>theme</td><td>主题 目前有白蓝（white_blue）,黑蓝（black_blue）</td><td>"white_blue"</td><td>String</td><td>否</td><td>2.1+</td></tr>
+                        <tr><td>themesrc</td><td>主题路径(引用的插件的文件地址为起始地)</td><td>"css/theme/"</td><td>String</td><td>否</td><td>2.1+</td></tr>
+                        <tr><td>csssrc</td><td>主体css引用地址(引用的插件的文件地址为起始地)</td><td>"css/qkyhead.css"</td><td>String</td><td>否</td><td>2.1+</td></tr>
+
+                        <thead><tr><th colspan="6">主导航部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>navli_j</td><td>头部主导航列表数据</td><td>/</td><td>josn</td><td>是</td><td>2.0+</td></tr>
+                        <tr><td>navli_j.name</td><td>头部主导航列表名</td><td>"导航X"</td><td>String</td><td>navli_j子类</td><td>2.0+</td></tr>
+                        <tr><td>navli_j.attrcont</td><td>头部主导航列表外加属性</td><td>""href='#'"</td><td>String</td><td>navli_j子类</td><td>2.0+</td></tr>
+                        <tr><td>navli_j.isactive</td><td>头部主导航列表是否为激活</td><td>默认第一个选中激活</td><td>String</td><td>navli_j子类</td><td>2.0+</td></tr>
+                        
+                        <thead><tr><th colspan="6">左侧汉堡包点击后部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>morebtn</td><td>是否显示更多按钮（最左汉堡包图标）</td><td>true</td><td>boolen</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>common</td><td>更多菜单中的常用应用列表数据</td><td>后台调用</td><td>Array</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>lately</td><td>更多菜单中的最近应用列表数据</td><td>后台调用</td><td>Array</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>appcenter_link</td><td>应用中心链接地址</td><td>2.0:"default_html/appcenter.htm,<br/>1.4:"appcenter.html"</td><td>String</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>allapp</td><td>更多菜单中所有应用数据</td><td>后台调用</td><td>String</td><td>否</td><td>1.4+</td></tr>
+                        
+                        <thead><tr><th colspan="6">右侧个人信息部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>isinfo</td><td>是否显示个人信息</td><td>true</td><td>boolen</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>tea_info</td><td>个人信息数据</td><td>/</td><td>josn</td><td>是</td><td>1.4+</td></tr>
+                        <tr><td>tea_info.name</td><td>个人信息名字</td><td>”张晓明“</td><td>String</td><td>tea_info子类</td><td>1.4+</td></tr>
+                        <tr><td>tea_info.isphoto</td><td>个人信息是否显示头像</td><td>false</td><td>String</td><td>tea_info子类</td><td>1.4+</td></tr>
+                        <tr><td>tea_info.photo</td><td>个人信息头像</td><td>"images/tx01.png"</td><td>String</td><td>tea_info子类</td><td>1.4+</td></tr>
+                        <tr><td>otherli</td><td>更多设置下拉信息</td><td>默认设置好了</td><td>Array</td><td>否</td><td>1.4+</td></tr>
+                        
+                        <thead><tr><th colspan="6">右铃铛信息部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>isnews</td><td>是否显示信息铃铛</td><td>true</td><td>boolen</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>newsimgsrc</td><td>应用图标的来源路径</td><td>"images/appicon/"</td><td>String</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>newscenter_link</td><td>消息中心页面链接</td><td>2.0:"default_html/newscenter.htm,<br/>1.4:"newscenter.html"</td><td>String</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>news_analogdata</td><td>推送消息模拟数据</td><td>/</td><<td>josn</td><td>是</td><td>1.4+</td></tr>
+                        <tr><td>news_analogdata.appname</td><td>推送消息的应用名</td><td>后台调用</td><td>String</td><td>news_analogdata子类</td><td>1.4+</td></tr>
+                        <tr><td>news_analogdata.newsname</td><td>推送消息名字</td><td>后台调用</td><td>String</td><td>news_analogdata子类</td><td>1.4+</td></tr>
+                        <tr><td>news_analogdata.newsgettime</td><td>推送消息时间</td><td>后台调用</td><td>String</td><td>news_analogdata子类</td><td>1.4+</td></tr>
+                        <tr><td>news_analogdata.newscont</td><td>推送消息内容</td><td>后台调用</td><td>String</td><td>news_analogdata子类</td><td>1.4+</td></tr>
+                        
+                        <thead><tr><th colspan="6">回调函数部分</th></tr></thead>
+                        <thead><tr><th>参数名</th><th width="30%">用途</th><th width="30%">默认值</th><th>类型</th><th>从属关系</th><th width="12%">版本支持</th></tr></thead>
+                        <tr><td>setup</td><td>常用设置按钮点击回调</td><td>/</td><td>obj.function()</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>qkynavafter</td><td>整个头部渲染完后执行回调</td><td>/</td><td>obj.function()</td><td>否</td><td>1.4+</td></tr>
+                        <tr><td>navclick</td><td>主导航列表点击后回调</td><td>/</td><td>obj.function(t)返回当前</td><td>否</td><td>2.0+</td></tr>
+                        <tr><td>navhoverin</td><td>主导航列表悬停进时回调</td><td>/</td><td>obj.function(t)返回当前</td><td>否</td><td>2.0+</td></tr>
+                        <tr><td>navhoverout</td><td>主导航列表悬停出时回调</td><td>/</td><td>obj.function(t)返回当前</td><td>否</td><td>2.0+</td></tr>
+                        </tbody>
+                        </table>
+    </div>
+    <script src="qkyhead2.1/js/jq/1.11.1/jquery.min.js"></script>
+    <script src="qkyhead2.1/js/qkyhead2.1.js"></script>
+    
+    <script>
+	var optd={
+	htmlsrc:"qkyhead2.1/js/qkyhead2.1.html",//头部模板获取异步地址
+	logosrc:"qkyhead2.1/images/nav_logo/qky-logo.png",//logo来源路径
+	themesrc:"qkyhead2.1/css/theme/",//主题路径(引用的插件的文件地址为起始地址
+	csssrc:"qkyhead2.1/css/qkyhead.css",
+	newsimgsrc:"qkyhead2.1/images/appicon/"
+	}
+	$(function(){
+		$("#qkyhead").qkyhead(optd);
+		$(".theme_select").change(function(){
+			 var themes=$(this).find("option:selected").val();
+			if(themes=="black_blue")
+			qkyhead_changetheme(themes,"qkyhead2.1/images/nav_logo/logo.png");
+			else 
+			qkyhead_changetheme(themes,"qkyhead2.1/images/nav_logo/qky-logo.png");
+		});
+	});
+
+    </script>
+</body>
+</html>

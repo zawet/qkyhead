@@ -8,7 +8,7 @@
 /**左三样*/
 .qkyhead_menuicon{ color:#c5c5c5;}
 .qkyhead_menuicon:hover{ background:#5e5e5e;color:#fff;}
-.qkyhead_menuicon.active{ background:#5e5e5e;color:#c5c5c5; border-right:none !important;}
+.qkyhead_menuicon.active{ background:#5e5e5e;color:#c5c5c5; border:none !important;}
 .qkyhead_line{background-image:linear-gradient(-180deg, #515151 0%, #878787 51%, #515151 100%);}
 .qkyhead_pjname{ color:#27b0f2;}
 

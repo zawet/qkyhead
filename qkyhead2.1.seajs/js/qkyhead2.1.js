@@ -30,6 +30,8 @@ loadExtentFile("css/qkyhead.css","css",false);
                 return this;
             opts = $.extend({}, opts, options); //使用jQuery.extend 覆盖插件默认参数
 			
+
+			loadExtentFile(opts.csssrc,"css",false);
 			loadExtentFile(opts.themesrc+opts.theme+".css","css",true);
 			
             return this.each(function (i) {
@@ -229,7 +231,9 @@ loadExtentFile("css/qkyhead.css","css",false);
 			
 		}
 	});
-qkyhead_changetheme=function(theme){
+	
+	//独立改主题函数
+exports.qkyhead_changetheme=function(theme,logo){
 			var thishref=$("#theme").attr("href");
 			var hrefs=thishref.split("/");
 			hrefs[hrefs.length-1]=theme+".css";
@@ -240,6 +244,8 @@ qkyhead_changetheme=function(theme){
 				else newshref+=hrefs[i]
 			}
 			$("#theme").attr("href",newshref);
+			if(logo!=null&&logo!="undefined")
+			$(".qkyhead_logo img").attr("src",logo);
 	    }
 
 /*********三，函数结合体**************/

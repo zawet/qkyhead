@@ -236,6 +236,7 @@ loadExtentFile("css/qkyhead.css","css",false);
 									$(this).find("span").hide();
 									$(".qkyhead_more").slideUp(50);
 									 $(".qkyhead_menuicon").removeClass("active");
+									 $(".qkyhead_select_menu").slideUp(100);
 								});
 							}
 					}else{$(".qkyhead_news").hide();}
@@ -254,6 +255,7 @@ loadExtentFile("css/qkyhead.css","css",false);
 							$(".qkyhead_more").slideToggle(50);
 							$(this).toggleClass("active");
 							 $(".qkyhead_news .qkyhead_news_popup").slideUp(50);
+							 $(".qkyhead_select_menu").slideUp(100);
 						});
 						
 						tofor($("#common"),opts.common,"a");//渲染常用app
@@ -328,7 +330,16 @@ loadExtentFile("css/qkyhead.css","css",false);
 						$(".qkyhead_menuicon").hide();
 					}
 					
-					$(".qkyhead_select_btn").on("click",function(){
+					//下拉点击事件
+					$(document).on("click",":not('.qkyhead_select_btn')",function(){
+							$(".qkyhead_select_menu").slideUp(100);
+					})
+					$(".qkyhead_select_btn").on("click",function(event){
+						event.stopPropagation();
+						$(".qkyhead_select_menu").not($(this).parent().find(".qkyhead_select_menu")).slideUp(100);
+						$(".qkyhead_more").slideUp(50);
+						$(".qkyhead_menuicon").removeClass("active");
+						$(".qkyhead_news .qkyhead_news_popup").slideUp(50);
 						$(this).parent().find(".qkyhead_select_menu").slideToggle(100);
 					});
 

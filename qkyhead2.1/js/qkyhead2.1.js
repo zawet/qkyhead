@@ -332,7 +332,7 @@
 					
 					//下拉点击事件
 					$(document).on("click",":not('.qkyhead_select_btn')",function(){
-							$(".qkyhead_select_menu").slideUp(100);
+						$(".qkyhead_select_menu").slideUp(100);
 					})
 					$(".qkyhead_select_btn").on("click",function(event){
 						event.stopPropagation();
@@ -344,7 +344,7 @@
 					});
 
 					//2收尾整洁html
-					$("body").append($("#modal_mould").html());
+					$(".qkyhead").append($("#modal_mould").html());
 					$("#modal_mould,#qkyhead_more_lli_mould,#qkyhead_news_li_mould").remove();//去除所有隐藏待渲染的模板
 					
 					//3回调函数执行

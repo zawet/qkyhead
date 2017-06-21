@@ -210,7 +210,7 @@ loadExtentFile("css/qkyhead.css","css",false);
 					});
 
 					//2收尾整洁html
-					$("body").append($("#modal_mould").html());
+					$(".qkyhead").append($("#modal_mould").html());
 					$("#modal_mould,#qkyhead_more_lli_mould,#qkyhead_news_li_mould").remove();//去除所有隐藏待渲染的模板
 					
 					//3回调函数执行

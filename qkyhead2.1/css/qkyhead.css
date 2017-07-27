@@ -100,7 +100,9 @@ a[href],a{text-decoration: inherit;}
 
 
 /*更多菜单*/
-.qkyhead_more{position: absolute;left: 0;top: 100%;min-height: 300px;width: 90%;z-index: 666;display: none;padding: 0;margin: 0;border-top:0 !important;}
+.qkyhead_more{position: absolute;left:-100%;top: 100%;z-index: 666;padding: 0;margin: 0;border-top:0 !important;}
+.qkyhead_more,.qkyhead_more_right{-webkit-transition: all 0.3s;-moz-transition: all 0.3s ;transition: all 0.3s ;}
+.qkyhead_more.open{ left:0;}
 
 /*********更多菜单里公用**********/
 
@@ -124,23 +126,30 @@ a[href],a{text-decoration: inherit;}
 
 
 /*左边*/
-.qkyhead_more_left{ width:25%; min-height:100%;padding:0;padding-bottom:50px;}
+.qkyhead_more_left{  min-height:100%;padding:0;padding-bottom:50px; width:200px; position:relative; z-index:66; background:#fff;}
 .qkyhead_more_left .qkyhead_more_lli h5{ border-bottom:none !important;}
 .qkyhead_more_left .qkyhead_more_lli .li_a a{ float:none; width:100%; display:block;}
 
-.qkyhead_appCenter{ padding:15px 30px; position:absolute; bottom:0; left:0;cursor:pointer; font-size:14px; line-height:20px; display:block; width:25%;}
+.qkyhead_appCenter{ padding:15px 30px; cursor:pointer; font-size:14px; line-height:20px; display:block; width:100%;}
 .qkyhead_appCenter i.app{ font-size:16px;}
 
-.qkyhead_more .qkyhead_line{ position:absolute; left:25%; height:100%;top: 0;margin: 0;}
+.qkyhead_more .qkyhead_line{ position:absolute; left:200px; height:100%;top: 0;margin: 0; z-index:88;}
+.qkyhead_more .qkyhead_line.two{ left:400px;}
 
 /*右边*/
-.qkyhead_more_right{ width:75%; min-height:100%;}
-.qkyhead_more_right .row_left{ float:left; width:50%;}
-.qkyhead_more_right .row_right{ float:left; width:50%;}
+.qkyhead_more_rightbox{ height:100%;}
+.qkyhead_more_right{height:100%;overflow:hidden; width:200px; position:absolute; left:0; z-index:55; top:0; background:#fff;}
+.qkyhead_more_right.two{z-index:54; background:#f1f1f1; border-right:1px solid #ddd;}
+.qkyhead_more_right.one.open{ left:201px; }
+.qkyhead_more_right.two.open{ left:400px; }
 .qkyhead_more_right .qkyhead_more_lli{ padding:5px 15px 15px;}
+.qkyhead_more_right .scroll_box{ height:100%; width:110%; overflow-y:scroll; padding:0 10% 0 0}
 
-.qkyhead_more_havedata{overflow:hidden;}
-.qkyhead_more_havedata .scroll_box{ height:460px; width:105%; overflow-y:scroll; padding:0 5% 0 20px}
+.qkyhead_more_right .allapp_type_li{ padding:10px; color:#333; width:110%; font-weight:bold;}
+.qkyhead_more_right .allapp_type_li.active{ background:#f1f1f1; cursor:pointer;color:#27b0f2;}
+.qkyhead_more_right .allapp_li{ display:none;}
+.qkyhead_more_right .allapp_li a{ display:block; width:110%; padding:10px; color:#737373;}
+.qkyhead_more_right .allapp_li a:hover{ background:#f5f5f5; color:#27b0f2;}
 
 .seachApp_showbox{ display:none;}
 .seachApp_showbox h5{padding-bottom:10px;}

@@ -46,20 +46,30 @@
 .qkyhead_info:hover .qkyhead_infophoto i{ color:#515151;}
 .qkyhead_info:hover .qkyhead_sj{ border-top-color:#fff;}
 
+
 /**更多菜单*/
-.qkyhead_more{background: #fff;border: 1px solid #d8d8d8;}
-.qkyhead_more .qkyhead_line{background-image: linear-gradient(-180deg, #f5f5f5 0%, #d7dce6 51%, #f5f5f5 100%) !important;}
+.qkyhead_more{border:none;}
+.qkyhead_more .qkyhead_line{background-image: linear-gradient(-180deg, #535353 0%, #737373 51%, #535353 100%) !important;}
 
 .qkyhead_more_lli .setup{color:#27b0f2 !important; }
-.qkyhead_more_lli h5{ color:#333;border-bottom:1px solid #dfdfdf;}
-.qkyhead_more_lli a{ color:#333;}
+.qkyhead_more_lli h5{ color:#fff;border-bottom:1px solid #222;}
+.qkyhead_more_lli a{ color:#f5f5f5;}
 .qkyhead_more_lli a:hover{ color:#27b0f2;}
-.qkyhead .seachApp_showbox h5{ border-bottom:1px solid #dfdfdf;}
-.qkyhead_more_nodata i{ color:#27b0f2;}
 
+
+/*左边*/
+.qkyhead_more_left{ background:#535353;}
 .qkyhead_appCenter{color:#27b0f2; }
-.qkyhead_appCenter:hover{ background:#f5f5f5; color:#27b0f2;}
+.qkyhead_appCenter:hover{ background:#333; color:#27b0f2;}
 .qkyhead_appCenter i.app{ color:#38b9f1;}
+
+/*右边*/
+.qkyhead_more_right{ background:#535353;}
+.qkyhead_more_right.two{background:#737373; border-right:1px solid #666;}
+.qkyhead_more_right .allapp_type_li{color:#fff; }
+.qkyhead_more_right .allapp_type_li.active{ background:#737373; color:#27b0f2;}
+.qkyhead_more_right .allapp_li a{color:#f5f5f5;}
+.qkyhead_more_right .allapp_li a:hover{ background:#737373; color:#27b0f2;}
 
 
 /*设置弹窗*/

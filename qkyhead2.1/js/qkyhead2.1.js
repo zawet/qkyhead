@@ -296,14 +296,15 @@
 							var rightOnew=Number(ro.outerWidth()); 	
 						  	var leftminH=Number(l_i.eq(0).outerHeight()+l_i.eq(1).outerHeight()+50);
 							var leftmaxH=Number(l_i.eq(0).outerHeight()+l_i.eq(1).outerHeight()+l_c.outerHeight()+50);
+							var st=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+							leftmaxH=leftmaxH+st;
 							var rightOneh=50;
 							ro_t.each(function(i) {rightOneh+=Number($(this).outerHeight());});
-							
+							rightOneh=rightOneh+st;
 						    if(e.pageX>=0&&e.pageX<=leftw&&e.pageY>leftmaxH){
 								ro.removeClass("open");rt.removeClass("open");ro_t.removeClass("active");
 							}
-							 
-							 if((e.pageX>leftw&&e.pageX<=leftw+rightOnew)&&(e.pageY>rightOneh&&e.pageY<wh)){
+							 if((e.pageX>leftw&&e.pageX<=leftw+rightOnew)&&(e.pageY>rightOneh)){
 								rt.removeClass("open");ro_t.removeClass("active");
 							}
 						});
